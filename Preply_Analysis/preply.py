@@ -8,8 +8,8 @@ import os
 import wget
 import time
 import datetime
-#driver = webdriver.Chrome(executable_path=r'W:/chromedriver.exe')
-driver = webdriver.Firefox(executable_path=r'W:/geckodriver.exe')
+driver = webdriver.Chrome(executable_path=r"C:/Users/shume/journey/Mülakat/Pradise/chromedriver.exe")
+#driver = webdriver.Firefox(executable_path=r'W:/geckodriver.exe')
 preplybase="https://preply.com/en/online/turkish-tutors?page="
 i=1
 prepurls=[]
