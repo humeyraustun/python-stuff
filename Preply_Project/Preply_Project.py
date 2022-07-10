@@ -17,7 +17,18 @@ i=1
 prepurls=[]
 tutorNames=[]
 itutor=0
-while i<2:
+today = datetime.datetime.now()
+date_time = today.strftime("%Y%m%d")
+date_time0 = today.strftime("%d/%m/%Y")
+filename = date_time+".csv"
+f = open(filename, "wb")
+print("Writing day:",date_time)
+itutor=0 
+strline="date_time,tutorRank,tutorName,tutorPrice,tutorStudents,tutorLessons"
+print(strline)
+f.write(strline.encode("utf-8"))
+f.write("\n".encode("utf-8"))
+while i<44:
     prepurls.append(preplybase+str(i))
     i=i+1
 for prepurl in prepurls:
@@ -55,10 +66,25 @@ for prepurl in prepurls:
                         totalLessons=totalLessons.replace(" lesson","")
                     if(totalLessons.find(",")):
                         totalLessons=totalLessons.replace(",","")
-                    #strline=date_time0+","+str(itutor)+","+tutor_name+","+priceIndicatorValue+","+str(int(activeStudents))+","+str(int(totalLessons))
-                strline=str(itutor)+","+tutor_name.text+","+str(int(activeStudents))+","+str(int(totalLessons))
+                strline=date_time0+","+str(itutor)+","+tutor_name.text+","+priceIndicatorValue+","+str(int(activeStudents))+","+str(int(totalLessons))
+                #strline=str(itutor)+","+tutor_name.text+","+str(int(activeStudents))+","+str(int(totalLessons))
                 print(strline)
-            
+                f.write(date_time0.encode("utf-8"))
+                f.write(",".encode("utf-8"))
+                f.write(str(itutor).encode("utf-8"))
+                f.write(",".encode("utf-8"))
+                f.write(tutor_name.text.encode("utf-8"))
+                f.write(",".encode("utf-8"))
+                f.write(priceIndicatorValue.encode("utf-8"))
+                f.write(",".encode("utf-8"))
+                f.write(str(int(activeStudents)).encode("utf-8"))
+                f.write(",".encode("utf-8"))
+                f.write(str(int(totalLessons)).encode("utf-8"))
+                f.write("\n".encode("utf-8"))
+print("Finished writing day")
+f.close()
+        
+
             
 
             
