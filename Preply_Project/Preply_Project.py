@@ -25,6 +25,8 @@ for prepurl in prepurls:
     driver.get(prepurl)
     tutors=driver.find_elements(by=By.CLASS_NAME, value="styles_TutorCardWrapper__0Awqa")
     for tutor in tutors:
+        activestudents0="0 active students"
+        totalLessons0="0 lessons"
         cls = tutor.get_attribute("class")
         if(cls=="styles_TutorCardWrapper__0Awqa"):
             itutor=itutor+1
@@ -47,13 +49,15 @@ for prepurl in prepurls:
                         totalLessons=totalLessons.replace(" lesson","")
                     if(totalLessons.find(",")):
                         totalLessons=totalLessons.replace(",","")
-            tutor_price= tutor.find_element(by=By.CLASS_NAME, value ="styles_PriceIndicator__w2zeE")
-            tutor_price0=tutor_price.text
-            activeStudents0="0 active students"
-            totalLessons0="0 lessons"
+                    #strline=date_time0+","+str(itutor)+","+tutor_name+","+priceIndicatorValue+","+str(int(activeStudents))+","+str(int(totalLessons))
+                strline=str(itutor)+","+tutor_name.text+","+str(int(activeStudents))+","+str(int(totalLessons))
+                print(strline)
+            #tutor_price= tutor.find_element(by=By.CLASS_NAME, value ="styles_PriceIndicator__w2zeE")
+            #tutor_price0=tutor_price.text 
+
             
                 
-print (tutorNames)
+
 
 
 
