@@ -12,7 +12,7 @@ import datetime
 #driver = webdriver.Chrome(executable_path=r"C:/Users/shume/journey/Mulakat/chromedriver.exe")
 #driver = webdriver.Firefox(executable_path=r'W:/geckodriver.exe')
 driver = webdriver.Chrome()
-preplybase="https://preply.com/en/online/turkish-tutors?page="
+preplybase="https://preply.com/en/online/turkish-tutors?skippresearch=true&page="
 i=1
 prepurls=[]
 tutorNames=[]
@@ -32,6 +32,12 @@ for prepurl in prepurls:
             itutor=itutor+1
             tutor_name= tutor.find_element(by=By.CLASS_NAME, value="styles_FullNameHeading__XOrgT")
             tutorNames.append(tutor_name.text)
+            PriceIndicatorValue = tutor.find_element(by=By.CLASS_NAME, value="styles_PriceIndicator__w2zeE")                
+            priceIndicatorValue0=PriceIndicatorValue.text
+            priceIndicatorValue=priceIndicatorValue0.replace("\nTRY\nper hour","")
+            #tutor_price= tutor.find_element(by=By.CLASS_NAME, value ="styles_PriceIndicator__w2zeE")
+            #tutor_price0=tutor_price.text 
+            #tutor_price= tutor_price0.replace("\nTRY\nper hour","")
             if(tutor.find_elements_by_class_name("styles_StatsItem__9vB4s")):
                 Stats = tutor.find_elements(by=By.CLASS_NAME, value="styles_StatsItem__9vB4s")
                 for stat in Stats:
@@ -52,8 +58,8 @@ for prepurl in prepurls:
                     #strline=date_time0+","+str(itutor)+","+tutor_name+","+priceIndicatorValue+","+str(int(activeStudents))+","+str(int(totalLessons))
                 strline=str(itutor)+","+tutor_name.text+","+str(int(activeStudents))+","+str(int(totalLessons))
                 print(strline)
-            #tutor_price= tutor.find_element(by=By.CLASS_NAME, value ="styles_PriceIndicator__w2zeE")
-            #tutor_price0=tutor_price.text 
+            
+            
 
             
                 
