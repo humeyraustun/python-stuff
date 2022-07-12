@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>4445e714-482b-4570-b7ea-4868caac6579</ProjectGuid>
+    <ProjectGuid>e92e0979-a4fc-4143-bb3b-3b944f2cad94</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PreplyAnalysis.py</StartupFile>
+    <StartupFile>Analysis.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Preply_Project</Name>
-    <RootNamespace>Preply_Project</RootNamespace>
+    <Name>Analysis</Name>
+    <RootNamespace>Analysis</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,11 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PreplyAnalysis.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Preply_Project.py" />
-    <Compile Include="procpreply.py" />
+    <Compile Include="Analysis.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

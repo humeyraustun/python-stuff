@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7c3f9259-e92f-4e5b-9678-155e119d5171</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>preply.py</StartupFile>
+    <StartupFile>PreplyAnalysis.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="preply.py" />
-    <Compile Include="Preply_Analysis1.py" />
+    <Compile Include="PreplyAnalysis.py" />
     <Compile Include="procpreply.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
